@@ -9,13 +9,7 @@ const Home = () => {
   }, [])
 
   const getUsers = async () => {
-    let config = {
-      headers: {
-        "Content-Type": "application/json",
-        'Access-Control-Allow-Origin': '*',
-        }
-      }
-    const response = await axios.get("https://api-filmes-sg-vinicius.herokuapp.com/movies",config)
+    const response = await axios.get("https://api-teste-filmes.herokuapp.com/movies")
     if(response.status === 200){
       setData(response.data)
     }
