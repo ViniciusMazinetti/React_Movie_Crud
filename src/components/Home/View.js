@@ -19,7 +19,11 @@ const Home = () => {
 
   return (
     <div>
-      <h1>Home</h1>
+      {data && data.map((item, index) => {
+        return(
+          <div></div>
+        )
+      })}
     </div>
   )
 }
