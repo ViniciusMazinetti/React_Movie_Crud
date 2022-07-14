@@ -22,7 +22,7 @@ const Home = () => {
         //Ternário
         const isStreaming = item.streaming ? "Sim" : "Não"
         return(
-          <CardComponent title={item.name} index={index + 1} year={item.year} streaming={isStreaming}/>
+          <CardComponent title={item.name} index={index + 1} year={item.year} streaming={isStreaming} id={item._id}/>
         )
       })}
     </div>
