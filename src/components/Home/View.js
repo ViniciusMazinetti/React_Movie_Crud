@@ -21,6 +21,7 @@ const Home = () => {
   return (
     <div>
       {data && data.map((item, index) => {
+        //Ternário
         const isStreaming = item.streaming ? "Sim" : "Não"
         return(
           <CardComponent title={item.name} index={index + 1} year={item.year} streaming={isStreaming}/>
