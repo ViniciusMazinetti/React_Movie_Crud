@@ -13,6 +13,7 @@ const Header = () => {
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/add">Adicionar Filme</Nav.Link>
+            <Nav.Link href="#">Deletar Tudo</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

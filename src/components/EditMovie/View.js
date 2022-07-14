@@ -15,7 +15,10 @@ const EditMovie = () => {
   const {name, year, streaming} = initialState
   return(
     <div>
-      <FormMovie/>
+      <h1 class="title" style={{textAlign: "center"}}>Editar Filme</h1>
+      <div class="formContainer" style={{margin: "2rem 50rem"}}>
+        <FormMovie/>
+      </div>
     </div>
   )
 }

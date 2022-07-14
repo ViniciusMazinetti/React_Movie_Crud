@@ -5,16 +5,13 @@ const FormMovie = () => {
   return (
     <Form>
       <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Nome</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" />
-        <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
-        </Form.Text>
+        <Form.Label>Nome do filme</Form.Label>
+        <Form.Control type="Text" placeholder="Digite o nome do filme..." />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Ano</Form.Label>
-        <Form.Control type="password" placeholder="Password" />
+        <Form.Control type="number" placeholder="Digite o ano do filme..." />
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicCheckbox">
         <Form.Check type="checkbox" label="Está no streaming ?" />
