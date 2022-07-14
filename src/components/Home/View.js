@@ -16,8 +16,6 @@ const Home = () => {
     }
   }
 
-  console.log(data)
-
   return (
     <div>
       {data && data.map((item, index) => {
