@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
+import CardComponent from "./../Card/View"
 
 const Home = () => {
   const [data, setData] = useState([])
@@ -20,8 +21,9 @@ const Home = () => {
   return (
     <div>
       {data && data.map((item, index) => {
+        const isStreaming = item.streaming ? "Sim" : "Não"
         return(
-          <div></div>
+          <CardComponent title={item.name} index={index + 1} year={item.year} streaming={isStreaming}/>
         )
       })}
     </div>

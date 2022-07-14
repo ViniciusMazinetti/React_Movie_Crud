@@ -3,14 +3,15 @@ import Card from 'react-bootstrap/Card';
 import ModalButton from "./../Modal/View"
 import {BsFillTrashFill} from "react-icons/bs"
 
-function BasicExample() {
+const CardComponent  = (props) => {
   return (
     <Card style={{ width: '18rem' }}>
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
+        <Card.Title>{props.title}</Card.Title>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+          <p>Index: {props.index}</p>
+          <p>Ano: {props.year}</p>
+          <p>Streaming: {props.streaming}</p>
         </Card.Text>
         <Button variant="primary">Edit</Button>
         <ModalButton buttonLabel = {<BsFillTrashFill/>} modalContext = "Tem certeza que deseja deletar este filme ?"/>
@@ -19,4 +20,4 @@ function BasicExample() {
   );
 }
 
-export default BasicExample;
+export default CardComponent;
