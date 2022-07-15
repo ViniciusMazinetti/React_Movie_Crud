@@ -6,14 +6,15 @@ import AddMovie from "./components/AddMovie/View"
 import EditMovie from "./components/EditMovie/View"
 import Header from "./components/Header/View"
 import 'bootstrap/dist/css/bootstrap.min.css'
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const App = () => {
   return(
     <BrowserRouter>
+      <Header />
       <div className='App'>
-        <Header />
-        <ToastContainer/>
+        <ToastContainer position='top-center'/>
         <Routes>
           <Route exact path="/" element={<Home/>}/>
           <Route path="/add" element={<AddMovie/>}/>
