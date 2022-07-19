@@ -2,7 +2,6 @@ import React from "react"
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
-import "./View.css"
 
 const FormMovie = (props) => {
   
@@ -19,7 +18,7 @@ const FormMovie = (props) => {
           <Form.Control type="number" placeholder="Digite o ano do filme..." name="year" onChange={props.change} value={props.valueYear}/>
         </Form.Group>
         <Form.Group className="mb-3">
-          <Form.Check type="checkbox" label="Está no streaming ?" name ="streaming" onChange={props.change} value={props.valueStreaming}/>
+          <Form.Check type="checkbox" label="Está no streaming ?" name ="streaming" onChange={props.change} value={props.valueStreaming} checked={props.isChecked}/>
         </Form.Group>
         <Button variant="primary" type="submit" >
           Salvar

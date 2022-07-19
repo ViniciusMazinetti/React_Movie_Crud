@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import {useNavigate, useParams} from "react-router-dom"
 import axios from "axios"
 import FormMovie from "./../FormMovie/View"
@@ -17,32 +17,58 @@ const EditMovie = () => {
 
   const navigate = useNavigate()
 
-  const updateMovie = async (data) => {
-    const response = await axios.post("https://api-teste-filmes.herokuapp.com/movie", data)
+  const{id} = useParams()
+
+  useEffect(() => {
+    if(id){
+      getSingleUser(id)
+    }
+  },[])
+
+  const getSingleUser = async (id) => {
+    const response = await axios.get(`https://api-teste-filmes.herokuapp.com/movie/${id}`)
     if (response.status === 200) {
-      toast.success(response.data)
+      setState({...response.data})
+    }
+  }
+
+  const updateMovie = async (data, id) => {
+    const response = await axios.put(`https://api-teste-filmes.herokuapp.com/movie/${id}`, data)
+    if (response.status === 200) {
+      toast.success("Filme atualizado com sucesso !!!")
     }
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
     if (!name || !year){
-      toast.error("Campos Nome e Ano são obrigatórios")
+      toast.error("Os campos de nome e ano são obrigatórios !!!")
     }else{
-      updateMovie(state)
+      updateMovie(state, id)
       navigate("/")
     }
   }
 
   const handleInputChange = (e) => {
     let {name, value} = e.target
-    setState({...state, [name]: value})
+    if (name === "streaming"){
+      if (value === "false"){
+        value = false
+      } else {
+        value = true
+      }
+      setState({...state,[name]:!value})
+    }else{
+      setState({...state,[name]:value})
+    }
+    
   }
+
   return(
     <div>
-      <h1 class="title" style={{textAlign: "center"}}>Editar Filme</h1>
-      <div class="formContainer" style={{margin: "2rem 50rem"}}>
-        <FormMovie change={handleInputChange} valueName={name} valueYear={year} valueStreaming={streaming} submit={handleSubmit}/>
+      <h1 className="title" style={{textAlign: "center"}}>Editar um Filme</h1>
+      <div className='form'>
+        <FormMovie change={handleInputChange} valueName={name} valueYear={year} valueStreaming={streaming} submit={handleSubmit} isChecked = {streaming}/>
       </div>
     </div>
   )

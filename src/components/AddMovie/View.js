@@ -3,7 +3,6 @@ import {useNavigate} from "react-router-dom"
 import axios from "axios"
 import FormMovie from "./../FormMovie/View"
 import { toast } from 'react-toastify'
-import "./View.css"
 
 const initialState = {
   name: "",
