@@ -12,14 +12,12 @@ const CardComponent  = (props) => {
     <Card style={{ width: '16rem' }} className="m-3">
       <Card.Body>
         <Card.Title className="text-center">{props.title}</Card.Title>
-        <Card.Text>
-          <p>Index: {props.index}</p>
-          <p>Ano: {props.year}</p>
-          <p>Streaming: {props.streaming}</p>
-        </Card.Text>
-        <Row className='justify-content-md-between'>
-          <Col md={4} className='justify-content-md-start'><Button variant="primary" href={`/update/${id}`} className=""><BsFillPencilFill/></Button></Col>
-          <Col md={4} className='justify-content-md-end'><ModalButton buttonLabel = {<BsFillTrashFill/>} idItem = {id} modalContext = "Tem certeza que deseja deletar este filme ?"/></Col>
+        <Card.Text>Index: {props.index}</Card.Text>
+        <Card.Text>Ano: {props.year}</Card.Text>
+        <Card.Text>Streaming: {props.streaming}</Card.Text>
+        <Row className="justify-content-md-center">
+          <Col md="auto"><Button variant="primary" href={`/update/${id}`}><BsFillPencilFill/></Button></Col>
+          <Col md="auto"><ModalButton buttonLabel = {<BsFillTrashFill/>} idItem = {id} modalContext = "Tem certeza que deseja deletar este filme ?"/></Col>
         </Row>
       </Card.Body>
     </Card>

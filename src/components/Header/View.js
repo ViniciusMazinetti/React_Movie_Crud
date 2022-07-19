@@ -4,6 +4,8 @@ import Navbar from 'react-bootstrap/Navbar'
 import axios from "axios" 
 import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
+import Button from 'react-bootstrap/Button'
+import Stack from 'react-bootstrap/Stack';
 
 
 const Header = () => {
@@ -32,9 +34,11 @@ const Header = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/add">Adicionar Filme</Nav.Link>
-            <Nav.Link  onClick={handlerDeleteButton}>DELETAR TUDO</Nav.Link>
+            <Stack direction="horizontal" gap={3}>
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/add">Adicionar filme</Nav.Link>
+              <Nav.Link  onClick={handlerDeleteButton}><Button variant="danger">Deletar Tudo</Button></Nav.Link>
+            </Stack>
           </Nav>
         </Navbar.Collapse>
       </Container>
