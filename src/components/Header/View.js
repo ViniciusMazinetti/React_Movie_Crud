@@ -34,7 +34,7 @@ const Header = () => {
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/add">Adicionar Filme</Nav.Link>
-            <Nav.Link className='deleteText' onClick={handlerDeleteButton}>DELETAR TUDO</Nav.Link>
+            <Nav.Link  onClick={handlerDeleteButton}>DELETAR TUDO</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
